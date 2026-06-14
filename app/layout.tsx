@@ -4,6 +4,8 @@ import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { CartProvider } from '@/lib/context/CartContext'
+import { CartDrawerProvider } from '@/lib/context/CartDrawerContext'
+import { CartDrawer } from '@/components/cart/CartDrawer'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -24,9 +26,12 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className="bg-background text-text-primary min-h-screen flex flex-col font-sans">
         <CartProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <CartDrawerProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <CartDrawer />
+          </CartDrawerProvider>
         </CartProvider>
       </body>
     </html>

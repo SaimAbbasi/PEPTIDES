@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ShoppingCart, User, Search, Menu, X, FlaskConical } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { useCart } from '@/lib/context/CartContext'
+import { useCartDrawer } from '@/lib/context/CartDrawerContext'
 import { ComplianceBanner } from '@/components/ui/ComplianceBanner'
 
 const navLinks = [
@@ -16,6 +17,7 @@ const navLinks = [
 
 export function Navbar() {
   const { totalItems } = useCart()
+  const { openDrawer } = useCartDrawer()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -66,14 +68,14 @@ export function Navbar() {
               <Link href="/account" className="text-text-secondary hover:text-text-primary transition-colors">
                 <User size={20} />
               </Link>
-              <Link href="/cart" className="relative text-text-secondary hover:text-text-primary transition-colors">
+              <button onClick={openDrawer} className="relative text-text-secondary hover:text-text-primary transition-colors">
                 <ShoppingCart size={20} />
                 {totalItems > 0 && (
                   <span className="absolute -top-2 -right-2 bg-accent text-black text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                     {totalItems}
                   </span>
                 )}
-              </Link>
+              </button>
               <button
                 className="md:hidden text-text-secondary hover:text-text-primary transition-colors"
                 onClick={() => setMobileOpen(!mobileOpen)}
