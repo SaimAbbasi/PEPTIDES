@@ -6,6 +6,8 @@ import { Footer } from '@/components/layout/Footer'
 import { CartProvider } from '@/lib/context/CartContext'
 import { CartDrawerProvider } from '@/lib/context/CartDrawerContext'
 import { CartDrawer } from '@/components/cart/CartDrawer'
+import { ToastProvider } from '@/lib/context/ToastContext'
+import { ToastContainer } from '@/components/ui/Toast'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,10 +29,13 @@ export default function RootLayout({
       <body className="bg-background text-text-primary min-h-screen flex flex-col font-sans">
         <CartProvider>
           <CartDrawerProvider>
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-            <CartDrawer />
+            <ToastProvider>
+              <Navbar />
+              <main className="flex-1">{children}</main>
+              <Footer />
+              <CartDrawer />
+              <ToastContainer />
+            </ToastProvider>
           </CartDrawerProvider>
         </CartProvider>
       </body>
