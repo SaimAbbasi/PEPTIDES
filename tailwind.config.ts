@@ -21,7 +21,7 @@ const config: Config = {
         'text-muted': '#5A6070',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
     },
   },
