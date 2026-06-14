@@ -31,18 +31,18 @@ export function ProductCard({ product, className }: ProductCardProps) {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
           />
         </Link>
-        {(product as any).badge && (
+        {product.badge && (
           <span className={cn(
             'absolute top-3 left-3 z-10 px-2.5 py-1 text-xs font-bold uppercase tracking-wide rounded-full',
-            (product as any).badge === 'bestseller' && 'bg-accent text-black',
-            (product as any).badge === 'new' && 'bg-teal text-white',
-            (product as any).badge === 'low-stock' && 'bg-amber-500 text-black',
-            (product as any).badge === 'sale' && 'bg-red-500 text-white',
+            product.badge === 'bestseller' && 'bg-accent text-black',
+            product.badge === 'new' && 'bg-teal text-white',
+            product.badge === 'low-stock' && 'bg-amber-500 text-black',
+            product.badge === 'sale' && 'bg-red-500 text-white',
           )}>
-            {(product as any).badge === 'bestseller' && 'Best Seller'}
-            {(product as any).badge === 'new' && 'New'}
-            {(product as any).badge === 'low-stock' && 'Low Stock'}
-            {(product as any).badge === 'sale' && 'Sale'}
+            {product.badge === 'bestseller' && 'Best Seller'}
+            {product.badge === 'new' && 'New'}
+            {product.badge === 'low-stock' && 'Low Stock'}
+            {product.badge === 'sale' && 'Sale'}
           </span>
         )}
       </div>

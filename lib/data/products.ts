@@ -16,6 +16,7 @@ export const products: Product[] = [
     coaUrl: '/coa/bpc-157-coa.pdf',
     tags: ['regenerative', 'popular', 'gut health'],
     featured: true,
+    badge: 'bestseller',
   },
   {
     id: 'prod-2',
@@ -32,6 +33,7 @@ export const products: Product[] = [
     coaUrl: '/coa/tb-500-coa.pdf',
     tags: ['recovery', 'popular', 'tissue repair'],
     featured: true,
+    badge: 'bestseller',
   },
   {
     id: 'prod-3',
@@ -48,6 +50,7 @@ export const products: Product[] = [
     coaUrl: '/coa/ipamorelin-coa.pdf',
     tags: ['GH secretagogue', 'performance', 'selective'],
     featured: true,
+    badge: 'new',
   },
   {
     id: 'prod-4',
@@ -80,6 +83,7 @@ export const products: Product[] = [
     coaUrl: '/coa/matrixyl-3000-coa.pdf',
     tags: ['collagen', 'anti-aging', 'cosmetic', 'skin'],
     featured: true,
+    badge: 'new',
   },
   {
     id: 'prod-6',
@@ -96,6 +100,7 @@ export const products: Product[] = [
     coaUrl: '/coa/epithalon-coa.pdf',
     tags: ['longevity', 'telomere', 'pineal', 'anti-aging'],
     featured: false,
+    badge: 'low-stock',
   },
   {
     id: 'prod-7',
@@ -112,6 +117,7 @@ export const products: Product[] = [
     coaUrl: '/coa/selank-coa.pdf',
     tags: ['nootropic', 'anxiolytic', 'cognitive', 'research'],
     featured: false,
+    badge: 'new',
   },
   {
     id: 'prod-8',
@@ -128,6 +134,7 @@ export const products: Product[] = [
     coaUrl: '/coa/recovery-bundle-coa.pdf',
     tags: ['bundle', 'BPC-157', 'TB-500', 'recovery', 'popular'],
     featured: true,
+    badge: 'bestseller',
   },
 ]
 

@@ -1,5 +1,7 @@
 export type ProductCategory = 'research' | 'cosmetic' | 'performance' | 'bundle'
 
+export type ProductBadge = 'bestseller' | 'new' | 'low-stock' | 'sale'
+
 export interface Product {
   id: string
   slug: string
@@ -15,6 +17,7 @@ export interface Product {
   coaUrl: string          // Certificate of Analysis PDF URL
   tags: string[]
   featured: boolean
+  badge?: ProductBadge
 }
 
 export interface Category {
