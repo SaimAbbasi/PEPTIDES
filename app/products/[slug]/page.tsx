@@ -4,6 +4,7 @@ import { ProductTabs } from '@/components/products/ProductTabs'
 import { ProductCard } from '@/components/products/ProductCard'
 import { Badge } from '@/components/ui/Badge'
 import { AddToCartButton } from '@/components/products/AddToCartButton'
+import { StickyAddToCartWrapper } from '@/components/products/StickyAddToCartWrapper'
 import { AlertTriangle, CheckCircle, XCircle, ShieldCheck } from 'lucide-react'
 
 interface ProductDetailPageProps {
@@ -24,6 +25,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
     .slice(0, 4)
 
   return (
+    <>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* Product hero */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
@@ -56,7 +58,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           </div>
 
           {/* Add to cart */}
-          <AddToCartButton product={product} />
+          <div id="add-to-cart-anchor"><AddToCartButton product={product} /></div>
 
           {/* Trust signals */}
           <div className="mt-8 space-y-3 border-t border-border-subtle pt-8">
@@ -90,5 +92,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         </div>
       )}
     </div>
+    <StickyAddToCartWrapper product={product} />
+    </>
   )
 }
