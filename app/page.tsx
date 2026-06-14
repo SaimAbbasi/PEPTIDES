@@ -1,7 +1,19 @@
-export default function Home() {
+import { HeroSection } from '@/components/home/HeroSection'
+import { CategoryGrid } from '@/components/home/CategoryGrid'
+import { FeaturedProducts } from '@/components/home/FeaturedProducts'
+import { TrustBar } from '@/components/home/TrustBar'
+import { DualAudience } from '@/components/home/DualAudience'
+import { BlogPreview } from '@/components/home/BlogPreview'
+
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background text-text-primary flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-accent">PEPTICORE</h1>
-    </div>
+    <>
+      <HeroSection />
+      <TrustBar />
+      <CategoryGrid />
+      <FeaturedProducts />
+      <DualAudience />
+      <BlogPreview />
+    </>
   )
 }
