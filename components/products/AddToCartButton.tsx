@@ -5,21 +5,26 @@ import { ShoppingCart, Check } from 'lucide-react'
 import { Product } from '@/lib/types'
 import { Button } from '@/components/ui/Button'
 import { useCart } from '@/lib/context/CartContext'
+import { useToast } from '@/lib/context/ToastContext'
+import { useCartDrawer } from '@/lib/context/CartDrawerContext'
 
 export function AddToCartButton({ product }: { product: Product }) {
   const { addItem } = useCart()
+  const { addToast } = useToast()
+  const { openDrawer } = useCartDrawer()
   const [qty, setQty] = useState(1)
   const [added, setAdded] = useState(false)
 
   function handleAdd() {
     addItem(product, qty)
+    addToast({ productName: product.name, productImage: product.image })
+    openDrawer()
     setAdded(true)
     setTimeout(() => setAdded(false), 2000)
   }
 
   return (
     <div className="flex items-center gap-4">
-      {/* Quantity stepper */}
       <div className="flex items-center border border-border-subtle rounded-md overflow-hidden">
         <button
           onClick={() => setQty((q) => Math.max(1, q - 1))}
@@ -46,7 +51,7 @@ export function AddToCartButton({ product }: { product: Product }) {
         className="flex-1 gap-2 transition-all"
       >
         {added ? <Check size={18} /> : <ShoppingCart size={18} />}
-        {added ? 'Added to Cart!' : 'Add to Cart'}
+        {added ? 'Added!' : 'Add to Cart'}
       </Button>
     </div>
   )
