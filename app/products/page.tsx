@@ -6,22 +6,32 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ProductCategory } from '@/lib/types'
 
 interface ProductsPageProps {
-  searchParams: Promise<{ category?: string; sort?: string }>
+  searchParams: Promise<{ category?: string; sort?: string; inStock?: string; search?: string }>
 }
 
 export default async function ProductsPage({ searchParams }: ProductsPageProps) {
-  const { category, sort } = await searchParams
+  const { category, sort, inStock, search } = await searchParams
 
-  let filtered = category && category !== 'all'
-    ? products.filter((p) => p.category === (category as ProductCategory))
-    : products
+  const categoryParam = category && category !== 'all' ? category : undefined
+  const inStockParam = inStock === '1'
+  const searchParam = search as string | undefined
+
+  let filtered = products
+    .filter(p => !categoryParam || p.category === (categoryParam as ProductCategory))
+    .filter(p => !inStockParam || p.inStock)
+    .filter(p => !searchParam ||
+      p.name.toLowerCase().includes(searchParam.toLowerCase()) ||
+      p.shortDescription.toLowerCase().includes(searchParam.toLowerCase())
+    )
 
   if (sort === 'price-asc') filtered = [...filtered].sort((a, b) => a.price - b.price)
   if (sort === 'price-desc') filtered = [...filtered].sort((a, b) => b.price - a.price)
 
-  const title = category
-    ? `${category.charAt(0).toUpperCase() + category.slice(1)} Peptides`
-    : 'All Peptides'
+  const title = searchParam
+    ? `Search: "${searchParam}"`
+    : category
+      ? `${category.charAt(0).toUpperCase() + category.slice(1)} Peptides`
+      : 'All Peptides'
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

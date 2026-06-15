@@ -17,7 +17,18 @@ export function FilterSidebar() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const currentCategory = searchParams.get('category') ?? 'all'
+  const inStockOnly = searchParams.get('inStock') === '1'
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  function toggleInStock(checked: boolean) {
+    const params = new URLSearchParams(searchParams.toString())
+    if (checked) {
+      params.set('inStock', '1')
+    } else {
+      params.delete('inStock')
+    }
+    router.push(`/products?${params.toString()}`)
+  }
 
   function setCategory(value: string) {
     const params = new URLSearchParams(searchParams.toString())
@@ -53,7 +64,12 @@ export function FilterSidebar() {
       <div className="border-t border-border-subtle mt-6 pt-6">
         <h3 className="text-text-primary font-semibold text-sm uppercase tracking-wider mb-4">Stock</h3>
         <label className="flex items-center gap-2 text-text-secondary text-sm cursor-pointer">
-          <input type="checkbox" className="accent-accent" />
+          <input
+            type="checkbox"
+            className="accent-accent"
+            checked={inStockOnly}
+            onChange={e => toggleInStock(e.target.checked)}
+          />
           In Stock Only
         </label>
       </div>

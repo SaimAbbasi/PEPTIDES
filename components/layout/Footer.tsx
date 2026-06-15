@@ -34,9 +34,9 @@ export function Footer() {
               Research-grade peptides with verified purity. Every batch is third-party tested and comes with a full Certificate of Analysis.
             </p>
             <div className="flex gap-4 mt-6">
-              <a href="#" className="text-text-muted hover:text-text-primary transition-colors"><Globe size={18} /></a>
-              <a href="#" className="text-text-muted hover:text-text-primary transition-colors"><ChatCircle size={18} /></a>
-              <a href="#" className="text-text-muted hover:text-text-primary transition-colors"><YoutubeLogo size={18} /></a>
+              <a href="https://pepticore.com" title="PEPTICORE Website" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-text-primary transition-colors"><Globe size={18} /></a>
+              <a href="https://instagram.com/pepticore" title="PEPTICORE on Instagram" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-text-primary transition-colors"><ChatCircle size={18} /></a>
+              <a href="https://youtube.com/@pepticore" title="PEPTICORE on YouTube" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-text-primary transition-colors"><YoutubeLogo size={18} /></a>
             </div>
           </div>
 
