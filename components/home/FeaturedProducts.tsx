@@ -3,6 +3,7 @@ import { ProductCard } from '@/components/products/ProductCard'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
+import { AnimateIn } from '@/components/ui/AnimateIn'
 
 export function FeaturedProducts() {
   const featured = getFeaturedProducts()
@@ -15,14 +16,18 @@ export function FeaturedProducts() {
         centered
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {featured.map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {featured.map((product, i) => (
+          <AnimateIn key={product.id} delay={i * 0.1}>
+            <ProductCard product={product} />
+          </AnimateIn>
         ))}
       </div>
       <div className="text-center mt-12">
-        <Link href="/products">
-          <Button variant="outline" size="lg">View All Products</Button>
-        </Link>
+        <AnimateIn delay={0.3}>
+          <Link href="/products">
+            <Button variant="outline" size="lg">View All Products</Button>
+          </Link>
+        </AnimateIn>
       </div>
     </section>
   )

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { categories } from '@/lib/data/categories'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ArrowRight } from 'lucide-react'
+import { AnimateIn } from '@/components/ui/AnimateIn'
 
 export function CategoryGrid() {
   return (
@@ -11,11 +12,11 @@ export function CategoryGrid() {
         subtitle="From molecular research to cosmetic applications — find the peptides built for your work."
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {categories.map((cat) => (
+        {categories.map((cat, i) => (
+          <AnimateIn key={cat.id} delay={i * 0.1}>
           <Link
-            key={cat.id}
             href={`/products?category=${cat.slug}`}
-            className="group relative overflow-hidden rounded-xl bg-surface border border-border-subtle hover:border-accent/50 transition-all duration-300"
+            className="block group relative overflow-hidden rounded-xl bg-surface border border-border-subtle hover:border-accent/50 transition-all duration-300"
           >
             {/* Image */}
             <div className="h-48 overflow-hidden">
@@ -36,6 +37,7 @@ export function CategoryGrid() {
               </div>
             </div>
           </Link>
+          </AnimateIn>
         ))}
       </div>
     </section>

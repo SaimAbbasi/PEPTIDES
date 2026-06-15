@@ -4,6 +4,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Badge } from '@/components/ui/Badge'
 import { Clock, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { AnimateIn } from '@/components/ui/AnimateIn'
 
 export function BlogPreview() {
   const posts = blogPosts.slice(0, 3)
@@ -21,11 +22,11 @@ export function BlogPreview() {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {posts.map((post) => (
+        {posts.map((post, i) => (
+          <AnimateIn key={post.id} delay={i * 0.1}>
           <Link
-            key={post.id}
             href={`/blog/${post.slug}`}
-            className="group bg-surface border border-border-subtle rounded-xl overflow-hidden hover:border-accent/30 transition-all"
+            className="block group bg-surface border border-border-subtle rounded-xl overflow-hidden hover:border-accent/30 transition-all"
           >
             <div className="h-48 overflow-hidden">
               <img
@@ -48,6 +49,7 @@ export function BlogPreview() {
               <p className="text-text-secondary text-sm leading-relaxed line-clamp-2">{post.excerpt}</p>
             </div>
           </Link>
+          </AnimateIn>
         ))}
       </div>
       <div className="flex md:hidden justify-center mt-8">

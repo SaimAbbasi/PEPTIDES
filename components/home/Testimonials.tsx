@@ -1,5 +1,6 @@
 import { Star } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
+import { AnimateIn } from '@/components/ui/AnimateIn'
 
 const testimonials = [
   {
@@ -34,10 +35,10 @@ export function Testimonials() {
         centered
       />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {testimonials.map((t) => (
+        {testimonials.map((t, i) => (
+          <AnimateIn key={t.id} delay={i * 0.1}>
           <div
-            key={t.id}
-            className="bg-surface border border-border-subtle border-t-2 border-t-accent rounded-xl p-8 flex flex-col gap-4"
+            className="bg-surface border border-border-subtle border-t-2 border-t-accent rounded-xl p-8 flex flex-col gap-4 h-full"
           >
             {/* Stars */}
             <div className="flex gap-1">
@@ -60,6 +61,7 @@ export function Testimonials() {
               </span>
             </div>
           </div>
+          </AnimateIn>
         ))}
       </div>
     </section>

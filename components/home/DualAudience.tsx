@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import { Microscope, Dumbbell, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { AnimateIn } from '@/components/ui/AnimateIn'
 
 export function DualAudience() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* For Researchers */}
+        <AnimateIn direction="left">
         <div className="relative overflow-hidden rounded-2xl bg-surface border border-border-subtle p-10 group hover:border-accent/40 transition-colors">
           <div className="absolute top-0 right-0 w-48 h-48 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-colors" />
           <Microscope size={40} className="text-accent mb-6" />
@@ -28,8 +30,10 @@ export function DualAudience() {
             </Button>
           </Link>
         </div>
+        </AnimateIn>
 
         {/* For Athletes */}
+        <AnimateIn direction="right" delay={0.1}>
         <div className="relative overflow-hidden rounded-2xl bg-surface border border-border-subtle p-10 group hover:border-teal/40 transition-colors">
           <div className="absolute top-0 right-0 w-48 h-48 bg-teal/5 rounded-full blur-3xl group-hover:bg-teal/10 transition-colors" />
           <Dumbbell size={40} className="text-teal mb-6" />
@@ -51,6 +55,7 @@ export function DualAudience() {
             </Button>
           </Link>
         </div>
+        </AnimateIn>
       </div>
     </section>
   )
