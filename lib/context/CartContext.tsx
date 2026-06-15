@@ -1,12 +1,26 @@
 'use client'
 
-import { createContext, useContext, useState, useMemo, ReactNode } from 'react'
+import { createContext, useContext, useState, useMemo, useEffect, ReactNode } from 'react'
 import { CartItem, CartState, Product } from '@/lib/types'
 
 const CartContext = createContext<CartState | null>(null)
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([])
+  const [items, setItems] = useState<CartItem[]>(() => {
+    if (typeof window === 'undefined') return []
+    try {
+      const stored = localStorage.getItem('pepticore-cart')
+      return stored ? JSON.parse(stored) : []
+    } catch {
+      return []
+    }
+  })
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('pepticore-cart', JSON.stringify(items))
+    }
+  }, [items])
 
   function addItem(product: Product, quantity = 1) {
     setItems((prev) => {

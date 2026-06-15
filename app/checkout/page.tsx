@@ -18,13 +18,17 @@ const stepOrder: Step[] = ['contact', 'shipping', 'payment', 'review', 'complete
 
 export default function CheckoutPage() {
   const [currentStep, setCurrentStep] = useState<Step>('contact')
-  const { totalPrice, items } = useCart()
+  const { totalPrice, items, clearCart } = useCart()
   const shipping = totalPrice > 150 ? 0 : 9.99
 
   function nextStep() {
     const idx = stepOrder.indexOf(currentStep)
     if (idx < stepOrder.length - 1) {
-      setCurrentStep(stepOrder[idx + 1])
+      const next = stepOrder[idx + 1]
+      if (next === 'complete') {
+        clearCart()
+      }
+      setCurrentStep(next)
     }
   }
 
