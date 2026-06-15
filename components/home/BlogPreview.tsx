@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { blogPosts } from '@/lib/data/blog-posts'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Badge } from '@/components/ui/Badge'
-import { Clock, ArrowRight } from 'lucide-react'
+import { Clock, ArrowRight } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/Button'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 

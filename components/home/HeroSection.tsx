@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/Button'
-import { ArrowRight, FlaskConical } from 'lucide-react'
+import { ArrowRight, Flask } from '@phosphor-icons/react'
 
 const particles = Array.from({ length: 14 }, (_, i) => ({
   id: i,
@@ -108,7 +108,7 @@ export function HeroSection() {
         <div className="max-w-2xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-8">
-            <FlaskConical size={14} className="text-accent" />
+            <Flask size={14} className="text-accent" />
             <span className="text-accent text-xs font-semibold uppercase tracking-wider">
               Third-Party Lab Tested
             </span>

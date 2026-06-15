@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Microscope, Dumbbell, ArrowRight } from 'lucide-react'
+import { Microscope, Barbell, ArrowRight } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/Button'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 
@@ -36,7 +36,7 @@ export function DualAudience() {
         <AnimateIn direction="right" delay={0.1}>
         <div className="relative overflow-hidden rounded-2xl bg-surface border border-border-subtle p-10 group hover:border-teal/40 transition-colors">
           <div className="absolute top-0 right-0 w-48 h-48 bg-teal/5 rounded-full blur-3xl group-hover:bg-teal/10 transition-colors" />
-          <Dumbbell size={40} className="text-teal mb-6" />
+          <Barbell size={40} className="text-teal mb-6" />
           <h3 className="text-2xl font-bold text-text-primary mb-3">For Athletes</h3>
           <p className="text-text-secondary leading-relaxed mb-6">
             Performance and recovery peptides studied by sports scientists worldwide. Curated stacks built around the best-researched compounds.

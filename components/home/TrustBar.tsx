@@ -1,10 +1,10 @@
-import { FlaskConical, FileCheck, Zap, ShieldCheck } from 'lucide-react'
+import { Flask, FileDoc, Lightning, ShieldCheck } from '@phosphor-icons/react'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 
 const trustItems = [
-  { icon: FlaskConical, title: '3rd Party Lab Tested', desc: 'Every batch verified by independent labs' },
-  { icon: FileCheck, title: 'Certificate of Analysis', desc: 'Full COA available for every product' },
-  { icon: Zap, title: 'Fast Dispatch', desc: 'Orders processed within 24 hours' },
+  { icon: Flask, title: '3rd Party Lab Tested', desc: 'Every batch verified by independent labs' },
+  { icon: FileDoc, title: 'Certificate of Analysis', desc: 'Full COA available for every product' },
+  { icon: Lightning, title: 'Fast Dispatch', desc: 'Orders processed within 24 hours' },
   { icon: ShieldCheck, title: 'Secure Checkout', desc: 'SSL encrypted, multiple payment options' },
 ]
 

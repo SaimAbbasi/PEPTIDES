@@ -1,4 +1,4 @@
-import { Star } from 'lucide-react'
+import { Star } from '@phosphor-icons/react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 
@@ -43,7 +43,7 @@ export function Testimonials() {
             {/* Stars */}
             <div className="flex gap-1">
               {Array.from({ length: t.stars }).map((_, i) => (
-                <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />
+                <Star key={i} size={16} weight="fill" className="text-yellow-400" />
               ))}
             </div>
             {/* Quote */}

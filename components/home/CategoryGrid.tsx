@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { categories } from '@/lib/data/categories'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight } from '@phosphor-icons/react'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 
 export function CategoryGrid() {
