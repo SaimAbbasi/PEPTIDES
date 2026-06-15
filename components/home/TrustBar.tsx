@@ -1,4 +1,4 @@
-import { Flask, FileDoc, Lightning, ShieldCheck } from '@phosphor-icons/react'
+import { Flask, FileDoc, Lightning, ShieldCheck } from '@phosphor-icons/react/ssr'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 
 const trustItems = [

@@ -1,4 +1,4 @@
-import { Flask, Medal, Shield, Users } from '@phosphor-icons/react'
+import { Flask, Medal, Shield, Users } from '@phosphor-icons/react/ssr'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 
 const milestones = [

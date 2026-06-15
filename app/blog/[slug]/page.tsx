@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { getBlogPostBySlug, blogPosts } from '@/lib/data/blog-posts'
 import { Badge } from '@/components/ui/Badge'
-import { Clock, CalendarBlank } from '@phosphor-icons/react'
+import { Clock, CalendarBlank } from '@phosphor-icons/react/ssr'
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>

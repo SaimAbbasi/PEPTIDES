@@ -1,4 +1,4 @@
-import { Warning } from '@phosphor-icons/react'
+import { Warning } from '@phosphor-icons/react/ssr'
 
 export function ComplianceBanner() {
   return (

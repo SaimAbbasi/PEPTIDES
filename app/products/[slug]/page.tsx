@@ -5,7 +5,7 @@ import { ProductCard } from '@/components/products/ProductCard'
 import { Badge } from '@/components/ui/Badge'
 import { AddToCartButton } from '@/components/products/AddToCartButton'
 import { StickyAddToCartWrapper } from '@/components/products/StickyAddToCartWrapper'
-import { Warning, CheckCircle, XCircle, ShieldCheck } from '@phosphor-icons/react'
+import { Warning, CheckCircle, XCircle, ShieldCheck } from '@phosphor-icons/react/ssr'
 import { LabVideoSection } from '@/components/products/LabVideoSection'
 
 interface ProductDetailPageProps {

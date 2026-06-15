@@ -1,4 +1,4 @@
-import { Star } from '@phosphor-icons/react'
+import { Star } from '@phosphor-icons/react/ssr'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 

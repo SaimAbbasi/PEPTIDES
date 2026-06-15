@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Microscope, Barbell, ArrowRight } from '@phosphor-icons/react'
+import { Microscope, Barbell, ArrowRight } from '@phosphor-icons/react/ssr'
 import { Button } from '@/components/ui/Button'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 

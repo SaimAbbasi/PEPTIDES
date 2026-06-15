@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Flask, Globe, ChatCircle, YoutubeLogo } from '@phosphor-icons/react'
+import { Flask, Globe, ChatCircle, YoutubeLogo } from '@phosphor-icons/react/ssr'
 
 const footerLinks = {
   Shop: [

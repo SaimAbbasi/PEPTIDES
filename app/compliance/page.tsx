@@ -1,4 +1,4 @@
-import { Warning, Scales, Globe, UserCheck } from '@phosphor-icons/react'
+import { Warning, Scales, Globe, UserCheck } from '@phosphor-icons/react/ssr'
 
 export default function CompliancePage() {
   return (
