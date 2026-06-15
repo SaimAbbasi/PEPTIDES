@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/Badge'
 import { AddToCartButton } from '@/components/products/AddToCartButton'
 import { StickyAddToCartWrapper } from '@/components/products/StickyAddToCartWrapper'
 import { AlertTriangle, CheckCircle, XCircle, ShieldCheck } from 'lucide-react'
+import { LabVideoSection } from '@/components/products/LabVideoSection'
 
 interface ProductDetailPageProps {
   params: Promise<{ slug: string }>
@@ -79,6 +80,9 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
       <div className="bg-surface border border-border-subtle rounded-2xl p-8 mb-16">
         <ProductTabs product={product} />
       </div>
+
+      {/* Lab video */}
+      <LabVideoSection />
 
       {/* Related products */}
       {related.length > 0 && (
