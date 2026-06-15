@@ -1,9 +1,9 @@
-import { FlaskConical, Award, Shield, Users } from 'lucide-react'
+import { Flask, Medal, Shield, Users } from '@phosphor-icons/react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 
 const milestones = [
-  { icon: FlaskConical, title: 'In-House Testing', desc: 'Every product undergoes internal QC before shipment.' },
-  { icon: Award, title: 'Third-Party Verified', desc: 'Independent lab certification for every batch.' },
+  { icon: Flask, title: 'In-House Testing', desc: 'Every product undergoes internal QC before shipment.' },
+  { icon: Medal, title: 'Third-Party Verified', desc: 'Independent lab certification for every batch.' },
   { icon: Shield, title: 'Research Standards', desc: 'Manufactured to research-grade quality specifications.' },
   { icon: Users, title: 'Expert Team', desc: 'Biochemists and research professionals guiding our catalog.' },
 ]

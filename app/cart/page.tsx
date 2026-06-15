@@ -5,7 +5,7 @@ import { useCart } from '@/lib/context/CartContext'
 import { CartItem } from '@/components/cart/CartItem'
 import { OrderSummary } from '@/components/cart/OrderSummary'
 import { Button } from '@/components/ui/Button'
-import { ShoppingBag } from 'lucide-react'
+import { ShoppingBag } from '@phosphor-icons/react'
 
 export default function CartPage() {
   const { items } = useCart()

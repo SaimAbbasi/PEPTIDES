@@ -1,6 +1,6 @@
 'use client'
 
-import { Trash2 } from 'lucide-react'
+import { Trash } from '@phosphor-icons/react'
 import { CartItem as CartItemType } from '@/lib/types'
 import { useCart } from '@/lib/context/CartContext'
 
@@ -46,7 +46,7 @@ export function CartItem({ item }: { item: CartItemType }) {
         onClick={() => removeItem(item.product.id)}
         className="text-text-muted hover:text-red-400 transition-colors"
       >
-        <Trash2 size={16} />
+        <Trash size={16} />
       </button>
     </div>
   )

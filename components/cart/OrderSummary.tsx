@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useCart } from '@/lib/context/CartContext'
 import { Button } from '@/components/ui/Button'
-import { ShieldCheck } from 'lucide-react'
+import { ShieldCheck } from '@phosphor-icons/react'
 
 export function OrderSummary() {
   const { totalPrice, totalItems } = useCart()

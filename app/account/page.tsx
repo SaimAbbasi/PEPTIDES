@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
-import { User, Package } from 'lucide-react'
+import { User, Package } from '@phosphor-icons/react'
 
 type AccountTab = 'login' | 'register'
 

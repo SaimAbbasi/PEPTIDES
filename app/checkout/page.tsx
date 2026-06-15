@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useCart } from '@/lib/context/CartContext'
 import { Button } from '@/components/ui/Button'
-import { CheckCircle } from 'lucide-react'
+import { CheckCircle } from '@phosphor-icons/react'
 
 type Step = 'contact' | 'shipping' | 'payment' | 'review' | 'complete'
 
@@ -31,7 +31,7 @@ export default function CheckoutPage() {
   if (currentStep === 'complete') {
     return (
       <div className="max-w-lg mx-auto px-4 py-32 text-center">
-        <CheckCircle size={64} className="text-green-400 mx-auto mb-6" />
+        <CheckCircle size={64} weight="fill" className="text-green-400 mx-auto mb-6" />
         <h1 className="text-3xl font-bold text-text-primary mb-3">Order Placed!</h1>
         <p className="text-text-secondary">
           Thank you for your order. You'll receive a confirmation email shortly.

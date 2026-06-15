@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ShoppingCart, CheckCircle, XCircle } from 'lucide-react'
+import { ShoppingCart, CheckCircle, XCircle } from '@phosphor-icons/react'
 import { Product } from '@/lib/types'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
@@ -68,8 +68,8 @@ export function ProductCard({ product, className }: ProductCardProps) {
             <p className="text-accent text-xl font-bold">${product.price.toFixed(2)}</p>
             <div className={cn('flex items-center gap-1 text-xs mt-0.5', product.inStock ? 'text-green-400' : 'text-text-muted')}>
               {product.inStock
-                ? <><CheckCircle size={11} /> In Stock</>
-                : <><XCircle size={11} /> Out of Stock</>
+                ? <><CheckCircle size={11} weight="fill" /> In Stock</>
+                : <><XCircle size={11} weight="fill" /> Out of Stock</>
               }
             </div>
           </div>

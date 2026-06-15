@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ShoppingCart } from 'lucide-react'
+import { ShoppingCart } from '@phosphor-icons/react'
 import { Product } from '@/lib/types'
 import { useCart } from '@/lib/context/CartContext'
 import { useToast } from '@/lib/context/ToastContext'

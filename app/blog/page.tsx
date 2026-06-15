@@ -1,7 +1,7 @@
 import { blogPosts } from '@/lib/data/blog-posts'
 import { Badge } from '@/components/ui/Badge'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { Clock } from 'lucide-react'
+import { Clock } from '@phosphor-icons/react'
 import Link from 'next/link'
 
 export default function BlogPage() {

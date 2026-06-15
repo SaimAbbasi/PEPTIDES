@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { getBlogPostBySlug, blogPosts } from '@/lib/data/blog-posts'
 import { Badge } from '@/components/ui/Badge'
-import { Clock, Calendar } from 'lucide-react'
+import { Clock, CalendarBlank } from '@phosphor-icons/react'
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -27,7 +27,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.readTime} min read
           </span>
           <span className="flex items-center gap-1 text-text-muted text-sm">
-            <Calendar size={14} />
+            <CalendarBlank size={14} />
             {new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </span>
         </div>

@@ -5,7 +5,7 @@ import { ProductCard } from '@/components/products/ProductCard'
 import { Badge } from '@/components/ui/Badge'
 import { AddToCartButton } from '@/components/products/AddToCartButton'
 import { StickyAddToCartWrapper } from '@/components/products/StickyAddToCartWrapper'
-import { AlertTriangle, CheckCircle, XCircle, ShieldCheck } from 'lucide-react'
+import { Warning, CheckCircle, XCircle, ShieldCheck } from '@phosphor-icons/react'
 import { LabVideoSection } from '@/components/products/LabVideoSection'
 
 interface ProductDetailPageProps {
@@ -53,7 +53,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           <div className="flex items-center gap-6 mb-8">
             <p className="text-4xl font-bold text-accent">${product.price.toFixed(2)}</p>
             <div className={`flex items-center gap-1.5 text-sm font-medium ${product.inStock ? 'text-green-400' : 'text-text-muted'}`}>
-              {product.inStock ? <CheckCircle size={16} /> : <XCircle size={16} />}
+              {product.inStock ? <CheckCircle size={16} weight="fill" /> : <XCircle size={16} weight="fill" />}
               {product.inStock ? 'In Stock' : 'Out of Stock'}
             </div>
           </div>
@@ -65,7 +65,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           <div className="mt-8 space-y-3 border-t border-border-subtle pt-8">
             {[
               { icon: ShieldCheck, text: 'Third-party lab tested · COA available' },
-              { icon: AlertTriangle, text: 'For research use only. Not for human consumption.' },
+              { icon: Warning, text: 'For research use only. Not for human consumption.' },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-start gap-2 text-text-muted text-sm">
                 <Icon size={15} className="flex-shrink-0 mt-0.5" />

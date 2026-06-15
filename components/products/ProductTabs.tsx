@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Product } from '@/lib/types'
-import { ExternalLink } from 'lucide-react'
+import { ArrowSquareOut } from '@phosphor-icons/react'
 
 interface ProductTabsProps {
   product: Product
@@ -62,7 +62,7 @@ export function ProductTabs({ product }: ProductTabsProps) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-accent/10 hover:bg-accent/20 text-accent border border-accent/20 rounded-lg px-6 py-3 text-sm font-medium transition-colors"
             >
-              <ExternalLink size={16} />
+              <ArrowSquareOut size={16} />
               Download COA (PDF)
             </a>
           </div>

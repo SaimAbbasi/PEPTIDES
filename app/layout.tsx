@@ -3,10 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
-import { CartProvider } from '@/lib/context/CartContext'
-import { CartDrawerProvider } from '@/lib/context/CartDrawerContext'
+import { Providers } from '@/components/layout/Providers'
 import { CartDrawer } from '@/components/cart/CartDrawer'
-import { ToastProvider } from '@/lib/context/ToastContext'
 import { ToastContainer } from '@/components/ui/Toast'
 
 const inter = Inter({
@@ -27,17 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="bg-background text-text-primary min-h-screen flex flex-col font-sans">
-        <CartProvider>
-          <CartDrawerProvider>
-            <ToastProvider>
-              <Navbar />
-              <main className="flex-1">{children}</main>
-              <Footer />
-              <CartDrawer />
-              <ToastContainer />
-            </ToastProvider>
-          </CartDrawerProvider>
-        </CartProvider>
+        <Providers>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <CartDrawer />
+          <ToastContainer />
+        </Providers>
       </body>
     </html>
   )

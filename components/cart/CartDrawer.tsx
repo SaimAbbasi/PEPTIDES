@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { X, ShoppingBag } from 'lucide-react'
+import { X, ShoppingBag } from '@phosphor-icons/react'
 import { useCart } from '@/lib/context/CartContext'
 import { useCartDrawer } from '@/lib/context/CartDrawerContext'
 import { CartItem } from '@/components/cart/CartItem'
