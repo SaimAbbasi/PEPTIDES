@@ -155,7 +155,7 @@ export function HeroSection() {
           </div>
 
           {/* Animated stats */}
-          <div className="flex gap-8 mt-14 pt-8 border-t border-border-subtle">
+          <div className="flex flex-wrap gap-x-8 gap-y-4 mt-14 pt-8 border-t border-border-subtle">
             {stats.map((s) => (
               <StatCounter key={s.label} target={s.target} suffix={s.suffix} prefix={s.prefix} label={s.label} />
             ))}
