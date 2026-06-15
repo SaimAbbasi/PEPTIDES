@@ -13,8 +13,32 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'PEPTICORE | Research-grade. Results-driven.',
-  description: 'Premium peptides for research and performance. Lab-tested, third-party verified.',
+  title: {
+    default: 'PEPTICORE | Research-grade. Results-driven.',
+    template: '%s | PEPTICORE',
+  },
+  description: 'Premium research peptides. Third-party lab tested with Certificate of Analysis. BPC-157, TB-500, Ipamorelin, and more.',
+  keywords: ['research peptides', 'BPC-157', 'TB-500', 'Ipamorelin', 'peptide research', 'lab tested peptides'],
+  openGraph: {
+    type: 'website',
+    siteName: 'PEPTICORE',
+    title: 'PEPTICORE | Research-grade. Results-driven.',
+    description: 'Premium research peptides. Third-party lab tested with Certificate of Analysis.',
+    url: 'https://pepticore.com',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PEPTICORE | Research-grade. Results-driven.',
+    description: 'Premium research peptides. Third-party lab tested with Certificate of Analysis.',
+  },
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({

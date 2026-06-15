@@ -1,6 +1,22 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { getBlogPostBySlug, blogPosts } from '@/lib/data/blog-posts'
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
+  if (!post) return { title: 'Post Not Found' }
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+    },
+  }
+}
 import { Badge } from '@/components/ui/Badge'
 import { Clock, CalendarBlank } from '@phosphor-icons/react/ssr'
 

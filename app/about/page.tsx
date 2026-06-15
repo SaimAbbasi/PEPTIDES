@@ -1,4 +1,10 @@
+import type { Metadata } from 'next'
 import { Flask, Medal, Shield, Users } from '@phosphor-icons/react/ssr'
+
+export const metadata: Metadata = {
+  title: 'About PEPTICORE',
+  description: "Learn about PEPTICORE's commitment to research-grade purity, third-party testing, and the science behind our peptide catalog.",
+}
 import { SectionHeading } from '@/components/ui/SectionHeading'
 
 const milestones = [

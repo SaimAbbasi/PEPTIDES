@@ -1,4 +1,10 @@
+import type { Metadata } from 'next'
 import { blogPosts } from '@/lib/data/blog-posts'
+
+export const metadata: Metadata = {
+  title: 'Research Blog',
+  description: 'Research insights, peptide science, and protocol notes from the PEPTICORE team.',
+}
 import { Badge } from '@/components/ui/Badge'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Clock } from '@phosphor-icons/react/ssr'

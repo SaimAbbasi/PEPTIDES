@@ -1,4 +1,10 @@
+import type { Metadata } from 'next'
 import { Suspense } from 'react'
+
+export const metadata: Metadata = {
+  title: 'All Products',
+  description: 'Browse our full catalog of research-grade peptides. BPC-157, TB-500, Ipamorelin, Matrixyl, and more — all third-party lab tested with COA.',
+}
 import { products } from '@/lib/data/products'
 import { ProductCard } from '@/components/products/ProductCard'
 import { FilterSidebar } from '@/components/products/FilterSidebar'

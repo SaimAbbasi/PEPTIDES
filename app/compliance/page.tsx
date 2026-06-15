@@ -1,4 +1,10 @@
+import type { Metadata } from 'next'
 import { Warning, Scales, Globe, UserCheck } from '@phosphor-icons/react/ssr'
+
+export const metadata: Metadata = {
+  title: 'Compliance & Legal',
+  description: 'PEPTICORE compliance information. Products are for research use only and not intended for human consumption.',
+}
 
 export default function CompliancePage() {
   return (

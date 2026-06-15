@@ -1,5 +1,21 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getProductBySlug, products } from '@/lib/data/products'
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const product = getProductBySlug(slug)
+  if (!product) return { title: 'Product Not Found' }
+  return {
+    title: product.name,
+    description: product.shortDescription,
+    openGraph: {
+      title: product.name,
+      description: product.shortDescription,
+      images: [{ url: product.image }],
+    },
+  }
+}
 import { ProductTabs } from '@/components/products/ProductTabs'
 import { ProductCard } from '@/components/products/ProductCard'
 import { Badge } from '@/components/ui/Badge'
