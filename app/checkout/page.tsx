@@ -37,10 +37,33 @@ export default function CheckoutPage() {
   const [payment, setPayment] = useState({ cardName: '', cardNumber: '', expiry: '', cvv: '' })
   const [errors, setErrors] = useState<Record<string, string>>({})
 
+  // Coupon code
+  const [couponCode, setCouponCode] = useState('')
+  const [couponApplied, setCouponApplied] = useState(false)
+  const [couponError, setCouponError] = useState('')
+
+  // Order number
+  const [orderNumber, setOrderNumber] = useState('')
+
   // Shipping cost
   const shippingCosts = { standard: 9.99, express: 19.99, overnight: 39.99 }
   const subtotal = totalPrice
   const shippingCost = subtotal > 150 ? 0 : shippingCosts[shippingMethod]
+  const discount = couponApplied ? subtotal * 0.1 : 0
+  const taxRate = 0.08
+  const tax = subtotal * taxRate
+  const total = subtotal + shippingCost + tax - discount
+
+  function applyCoupon() {
+    const code = couponCode.trim().toUpperCase()
+    if (code === 'RESEARCH10' || code === 'WELCOME10' || code === 'PEPTIDE10') {
+      setCouponApplied(true)
+      setCouponError('')
+    } else {
+      setCouponError('Invalid code. Try RESEARCH10.')
+      setCouponApplied(false)
+    }
+  }
 
   function validateStep(): boolean {
     const newErrors: Record<string, string> = {}
@@ -71,6 +94,7 @@ export default function CheckoutPage() {
       const next = stepOrder[idx + 1]
       if (next === 'complete') {
         clearCart()
+        setOrderNumber('PEP-' + Date.now().toString().slice(-6))
       }
       setCurrentStep(next)
     }
@@ -81,6 +105,8 @@ export default function CheckoutPage() {
       <div className="max-w-lg mx-auto px-4 py-32 text-center">
         <CheckCircle size={64} weight="fill" className="text-green-400 mx-auto mb-6" />
         <h1 className="text-3xl font-bold text-text-primary mb-3">Order Placed!</h1>
+        <p className="text-text-muted text-sm mb-2">Order Number</p>
+        <p className="text-accent font-mono text-lg font-bold mb-6">{orderNumber}</p>
         <p className="text-text-secondary">
           Thank you for your order. You&apos;ll receive a confirmation email shortly.
         </p>
@@ -367,10 +393,46 @@ export default function CheckoutPage() {
               <span className="text-text-secondary">Shipping</span>
               <span className="text-text-primary">{shippingCost === 0 ? 'FREE' : `$${shippingCost.toFixed(2)}`}</span>
             </div>
-            <div className="border-t border-border-subtle pt-2 flex justify-between font-bold">
-              <span>Total</span>
-              <span className="text-accent">${(subtotal + shippingCost).toFixed(2)}</span>
+            <div className="flex justify-between text-text-secondary mb-2">
+              <span>Tax (8%)</span>
+              <span>${tax.toFixed(2)}</span>
             </div>
+          </div>
+
+          {/* Coupon code */}
+          <div className="mt-3">
+            {!couponApplied ? (
+              <div className="mb-4">
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    placeholder="Coupon code"
+                    value={couponCode}
+                    onChange={e => setCouponCode(e.target.value)}
+                    className="flex-1 bg-surface-elevated border border-border-subtle rounded-md px-3 py-2 text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
+                  />
+                  <button
+                    onClick={applyCoupon}
+                    className="px-3 py-2 bg-surface-elevated border border-border-subtle rounded-md text-text-secondary hover:text-text-primary text-sm transition-colors"
+                  >
+                    Apply
+                  </button>
+                </div>
+                {couponError && <p className="text-red-400 text-xs mt-1">{couponError}</p>}
+              </div>
+            ) : (
+              <div className="flex justify-between text-sm mb-2">
+                <span className="text-green-400 flex items-center gap-1">
+                  ✓ RESEARCH10 applied
+                </span>
+                <span className="text-green-400">-${discount.toFixed(2)}</span>
+              </div>
+            )}
+          </div>
+
+          <div className="border-t border-border-subtle pt-2 flex justify-between font-bold text-sm">
+            <span>Total</span>
+            <span className="text-accent">${total.toFixed(2)}</span>
           </div>
         </div>
       </div>
