@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/products?category=cosmetic', label: 'Cosmetic' },
   { href: '/products?category=performance', label: 'Performance' },
   { href: '/products?category=bundle', label: 'Bundles' },
+  { href: '/peptides', label: 'Library' },
   { href: '/blog', label: 'Research Blog' },
 ]
 
