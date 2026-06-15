@@ -11,11 +11,17 @@ const footerLinks = {
   Company: [
     { href: '/about', label: 'About Us' },
     { href: '/blog', label: 'Research Blog' },
-    { href: '/compliance', label: 'Compliance' },
   ],
   Support: [
     { href: '/account', label: 'My Account' },
     { href: '/cart', label: 'Cart' },
+    { href: '/faq', label: 'FAQ' },
+    { href: '/contact', label: 'Contact' },
+  ],
+  Legal: [
+    { href: '/privacy', label: 'Privacy Policy' },
+    { href: '/terms', label: 'Terms of Service' },
+    { href: '/compliance', label: 'Compliance' },
   ],
 }
 
@@ -23,7 +29,7 @@ export function Footer() {
   return (
     <footer className="bg-surface border-t border-border-subtle mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
