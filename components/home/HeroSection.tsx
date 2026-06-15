@@ -16,7 +16,7 @@ const particles = Array.from({ length: 14 }, (_, i) => ({
 const stats = [
   { target: 99, suffix: '%+', label: 'Average Purity' },
   { target: 3, prefix: '', suffix: 'rd Party', label: 'Lab Verified' },
-  { target: 50, suffix: '+', label: 'Peptide SKUs' },
+  { target: 8, suffix: '', label: 'Premium Peptides' },
 ]
 
 function useCountUp(target: number, duration = 1500, active: boolean) {

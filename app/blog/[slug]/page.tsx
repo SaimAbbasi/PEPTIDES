@@ -43,7 +43,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Body */}
       <div className="prose prose-invert prose-lg max-w-none text-text-secondary leading-relaxed">
-        <p>{post.excerpt}</p>
+        <div dangerouslySetInnerHTML={{ __html: post.content }} />
         <p className="text-text-muted text-sm mt-8 p-4 border border-border-subtle rounded-lg bg-surface">
           This article is for informational purposes only. All content is related to scientific research. Not for human consumption. For research use only.
         </p>

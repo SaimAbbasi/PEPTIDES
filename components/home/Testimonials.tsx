@@ -13,9 +13,9 @@ const testimonials = [
   {
     id: 2,
     name: 'Jake Morrison',
-    role: 'Professional Athlete',
+    role: 'Research Coordinator',
     stars: 5,
-    quote: 'Finally a supplier that takes quality seriously. BPC-157 from PEPTICORE is the only one I trust for my recovery protocols.',
+    quote: 'Finally a supplier that takes quality seriously. BPC-157 from PEPTICORE is the only one we trust for our lab\'s research protocols.',
   },
   {
     id: 3,

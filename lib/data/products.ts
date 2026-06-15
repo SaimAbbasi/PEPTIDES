@@ -100,7 +100,7 @@ export const products: Product[] = [
     coaUrl: '/coa/epithalon-coa.pdf',
     tags: ['longevity', 'telomere', 'pineal', 'anti-aging'],
     featured: false,
-    badge: 'low-stock',
+    badge: undefined,
   },
   {
     id: 'prod-7',
