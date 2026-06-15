@@ -1,6 +1,6 @@
 'use client'
 
-import { X, CheckCircle } from 'lucide-react'
+import { X, CheckCircle } from '@phosphor-icons/react'
 import { useToast } from '@/lib/context/ToastContext'
 
 export function ToastContainer() {
@@ -23,7 +23,7 @@ export function ToastContainer() {
           />
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-1.5 mb-0.5">
-              <CheckCircle size={13} className="text-accent flex-shrink-0" />
+              <CheckCircle size={13} weight="fill" className="text-accent flex-shrink-0" />
               <span className="text-accent text-xs font-semibold">Added to cart</span>
             </div>
             <p className="text-text-primary text-sm font-medium truncate">{toast.productName}</p>

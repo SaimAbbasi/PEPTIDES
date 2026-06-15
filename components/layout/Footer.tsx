@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FlaskConical, Globe, MessageCircle, Play } from 'lucide-react'
+import { Flask, Globe, ChatCircle, YoutubeLogo } from '@phosphor-icons/react'
 
 const footerLinks = {
   Shop: [
@@ -27,7 +27,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <FlaskConical className="text-accent" size={20} />
+              <Flask className="text-accent" size={20} />
               <span className="text-lg font-black tracking-wider">PEPTICORE</span>
             </Link>
             <p className="text-text-secondary text-sm leading-relaxed max-w-xs">
@@ -35,8 +35,8 @@ export function Footer() {
             </p>
             <div className="flex gap-4 mt-6">
               <a href="#" className="text-text-muted hover:text-text-primary transition-colors"><Globe size={18} /></a>
-              <a href="#" className="text-text-muted hover:text-text-primary transition-colors"><MessageCircle size={18} /></a>
-              <a href="#" className="text-text-muted hover:text-text-primary transition-colors"><Play size={18} /></a>
+              <a href="#" className="text-text-muted hover:text-text-primary transition-colors"><ChatCircle size={18} /></a>
+              <a href="#" className="text-text-muted hover:text-text-primary transition-colors"><YoutubeLogo size={18} /></a>
             </div>
           </div>
 
