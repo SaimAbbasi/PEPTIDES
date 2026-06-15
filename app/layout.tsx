@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Providers } from '@/components/layout/Providers'
 import { CartDrawer } from '@/components/cart/CartDrawer'
 import { ToastContainer } from '@/components/ui/Toast'
+import { CookieBanner } from '@/components/ui/CookieBanner'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -49,12 +50,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="bg-background text-text-primary min-h-screen flex flex-col font-sans">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent focus:text-black focus:font-semibold focus:rounded-lg"
+        >
+          Skip to main content
+        </a>
         <Providers>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">{children}</main>
           <Footer />
           <CartDrawer />
           <ToastContainer />
+          <CookieBanner />
         </Providers>
       </body>
     </html>

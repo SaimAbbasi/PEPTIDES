@@ -150,8 +150,9 @@ export default function CheckoutPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-text-secondary text-sm mb-1">First Name</label>
+                    <label htmlFor="firstName" className="block text-text-secondary text-sm mb-1">First Name</label>
                     <input
+                      id="firstName"
                       type="text"
                       placeholder="First Name"
                       value={contact.firstName}
@@ -161,8 +162,9 @@ export default function CheckoutPage() {
                     {errors.firstName && <p className="text-red-400 text-xs mt-1">{errors.firstName}</p>}
                   </div>
                   <div>
-                    <label className="block text-text-secondary text-sm mb-1">Last Name</label>
+                    <label htmlFor="lastName" className="block text-text-secondary text-sm mb-1">Last Name</label>
                     <input
+                      id="lastName"
                       type="text"
                       placeholder="Last Name"
                       value={contact.lastName}
@@ -173,8 +175,9 @@ export default function CheckoutPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-text-secondary text-sm mb-1">Email Address</label>
+                  <label htmlFor="email" className="block text-text-secondary text-sm mb-1">Email Address</label>
                   <input
+                    id="email"
                     type="email"
                     placeholder="Email Address"
                     value={contact.email}
@@ -184,8 +187,9 @@ export default function CheckoutPage() {
                   {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
                 </div>
                 <div>
-                  <label className="block text-text-secondary text-sm mb-1">Phone Number</label>
+                  <label htmlFor="phone" className="block text-text-secondary text-sm mb-1">Phone Number</label>
                   <input
+                    id="phone"
                     type="tel"
                     placeholder="Phone Number"
                     value={contact.phone}
@@ -202,8 +206,9 @@ export default function CheckoutPage() {
               <h2 className="text-xl font-bold text-text-primary mb-6">Shipping Address & Method</h2>
               <div className="space-y-4 mb-8">
                 <div>
-                  <label className="block text-text-secondary text-sm mb-1">Street Address</label>
+                  <label htmlFor="address" className="block text-text-secondary text-sm mb-1">Street Address</label>
                   <input
+                    id="address"
                     type="text"
                     placeholder="Street Address"
                     value={shippingAddr.address}
@@ -214,8 +219,9 @@ export default function CheckoutPage() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-text-secondary text-sm mb-1">City</label>
+                    <label htmlFor="city" className="block text-text-secondary text-sm mb-1">City</label>
                     <input
+                      id="city"
                       type="text"
                       placeholder="City"
                       value={shippingAddr.city}
@@ -225,8 +231,9 @@ export default function CheckoutPage() {
                     {errors.city && <p className="text-red-400 text-xs mt-1">{errors.city}</p>}
                   </div>
                   <div>
-                    <label className="block text-text-secondary text-sm mb-1">State / Province</label>
+                    <label htmlFor="state" className="block text-text-secondary text-sm mb-1">State / Province</label>
                     <input
+                      id="state"
                       type="text"
                       placeholder="State"
                       value={shippingAddr.state}
@@ -237,8 +244,9 @@ export default function CheckoutPage() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-text-secondary text-sm mb-1">Postcode / ZIP</label>
+                    <label htmlFor="postcode" className="block text-text-secondary text-sm mb-1">Postcode / ZIP</label>
                     <input
+                      id="postcode"
                       type="text"
                       placeholder="Postcode / ZIP"
                       value={shippingAddr.postcode}
@@ -248,8 +256,9 @@ export default function CheckoutPage() {
                     {errors.postcode && <p className="text-red-400 text-xs mt-1">{errors.postcode}</p>}
                   </div>
                   <div>
-                    <label className="block text-text-secondary text-sm mb-1">Country</label>
+                    <label htmlFor="country" className="block text-text-secondary text-sm mb-1">Country</label>
                     <input
+                      id="country"
                       type="text"
                       placeholder="Country"
                       value={shippingAddr.country}
@@ -297,8 +306,9 @@ export default function CheckoutPage() {
               <h2 className="text-xl font-bold text-text-primary mb-6">Payment Details</h2>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-text-secondary text-sm mb-1">Cardholder Name</label>
+                  <label htmlFor="cardName" className="block text-text-secondary text-sm mb-1">Cardholder Name</label>
                   <input
+                    id="cardName"
                     type="text"
                     placeholder="Cardholder Name"
                     value={payment.cardName}
@@ -308,8 +318,9 @@ export default function CheckoutPage() {
                   {errors.cardName && <p className="text-red-400 text-xs mt-1">{errors.cardName}</p>}
                 </div>
                 <div>
-                  <label className="block text-text-secondary text-sm mb-1">Card Number</label>
+                  <label htmlFor="cardNumber" className="block text-text-secondary text-sm mb-1">Card Number</label>
                   <input
+                    id="cardNumber"
                     type="text"
                     placeholder="0000 0000 0000 0000"
                     value={payment.cardNumber}
@@ -320,8 +331,9 @@ export default function CheckoutPage() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-text-secondary text-sm mb-1">Expiry Date (MM/YY)</label>
+                    <label htmlFor="expiry" className="block text-text-secondary text-sm mb-1">Expiry Date (MM/YY)</label>
                     <input
+                      id="expiry"
                       type="text"
                       placeholder="MM/YY"
                       value={payment.expiry}
@@ -331,8 +343,9 @@ export default function CheckoutPage() {
                     {errors.expiry && <p className="text-red-400 text-xs mt-1">{errors.expiry}</p>}
                   </div>
                   <div>
-                    <label className="block text-text-secondary text-sm mb-1">CVV</label>
+                    <label htmlFor="cvv" className="block text-text-secondary text-sm mb-1">CVV</label>
                     <input
+                      id="cvv"
                       type="text"
                       placeholder="CVV"
                       value={payment.cvv}

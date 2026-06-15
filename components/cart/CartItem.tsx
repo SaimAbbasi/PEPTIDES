@@ -24,6 +24,7 @@ export function CartItem({ item }: { item: CartItemType }) {
         {/* Remove button - top right on mobile */}
         <button
           onClick={() => removeItem(item.product.id)}
+          aria-label={`Remove ${item.product.name} from cart`}
           className="text-text-muted hover:text-red-400 transition-colors flex-shrink-0 sm:hidden"
         >
           <Trash size={16} />
@@ -35,6 +36,7 @@ export function CartItem({ item }: { item: CartItemType }) {
         <div className="flex items-center border border-border-subtle rounded-md overflow-hidden">
           <button
             onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
+            aria-label={`Decrease quantity of ${item.product.name}`}
             className="w-8 h-8 flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-elevated transition-colors text-sm"
           >
             −
@@ -44,6 +46,7 @@ export function CartItem({ item }: { item: CartItemType }) {
           </span>
           <button
             onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
+            aria-label={`Increase quantity of ${item.product.name}`}
             className="w-8 h-8 flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-elevated transition-colors text-sm"
           >
             +
@@ -57,6 +60,7 @@ export function CartItem({ item }: { item: CartItemType }) {
           {/* Remove button - desktop only */}
           <button
             onClick={() => removeItem(item.product.id)}
+            aria-label={`Remove ${item.product.name} from cart`}
             className="text-text-muted hover:text-red-400 transition-colors hidden sm:block"
           >
             <Trash size={16} />

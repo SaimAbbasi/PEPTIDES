@@ -78,6 +78,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
             variant="primary"
             onClick={() => { addItem(product); addToast({ productName: product.name, productImage: product.image }); openDrawer() }}
             disabled={!product.inStock}
+            aria-label={`Add ${product.name} to cart`}
             className="gap-1.5"
           >
             <ShoppingCart size={14} />

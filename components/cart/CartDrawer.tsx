@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useEffect, useRef } from 'react'
 import { X, ShoppingBag } from '@phosphor-icons/react'
 import { useCart } from '@/lib/context/CartContext'
 import { useCartDrawer } from '@/lib/context/CartDrawerContext'
@@ -11,6 +12,18 @@ export function CartDrawer() {
   const { items, totalPrice, totalItems } = useCart()
   const { isOpen, closeDrawer } = useCartDrawer()
   const shipping = totalPrice > 150 ? 0 : 9.99
+  const drawerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (isOpen) {
+      const focusable = drawerRef.current?.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      )
+      if (focusable && focusable.length > 0) {
+        (focusable[0] as HTMLElement).focus()
+      }
+    }
+  }, [isOpen])
 
   return (
     <>
@@ -24,6 +37,7 @@ export function CartDrawer() {
 
       {/* Drawer panel */}
       <div
+        ref={drawerRef}
         className={`fixed inset-y-0 right-0 z-50 w-full max-w-[420px] bg-background border-l border-border-subtle flex flex-col transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
