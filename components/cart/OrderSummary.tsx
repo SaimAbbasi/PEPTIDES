@@ -42,7 +42,7 @@ export function OrderSummary() {
       </Link>
       <div className="flex items-center justify-center gap-2 mt-4 text-text-muted text-xs">
         <ShieldCheck size={13} />
-        Secure checkout — SSL encrypted
+        Secure checkout · SSL encrypted
       </div>
     </div>
   )

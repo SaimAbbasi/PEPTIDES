@@ -9,7 +9,7 @@ export function CategoryGrid() {
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <SectionHeading
         title="Shop by Category"
-        subtitle="From molecular research to cosmetic applications — find the peptides built for your work."
+        subtitle="From molecular research to cosmetic applications. Find the peptides built for your work."
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {categories.map((cat, i) => (

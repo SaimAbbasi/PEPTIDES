@@ -15,7 +15,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'PEPTICORE — Research-grade. Results-driven.',
+  title: 'PEPTICORE | Research-grade. Results-driven.',
   description: 'Premium peptides for research and performance. Lab-tested, third-party verified.',
 }
 

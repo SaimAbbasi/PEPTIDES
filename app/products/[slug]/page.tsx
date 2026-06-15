@@ -64,7 +64,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           {/* Trust signals */}
           <div className="mt-8 space-y-3 border-t border-border-subtle pt-8">
             {[
-              { icon: ShieldCheck, text: 'Third-party lab tested — COA available' },
+              { icon: ShieldCheck, text: 'Third-party lab tested · COA available' },
               { icon: AlertTriangle, text: 'For research use only. Not for human consumption.' },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-start gap-2 text-text-muted text-sm">

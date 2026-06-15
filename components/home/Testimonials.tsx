@@ -8,7 +8,7 @@ const testimonials = [
     name: 'Dr. Marcus Chen',
     role: 'Research Biochemist',
     stars: 5,
-    quote: 'The purity levels are consistently above what\'s advertised. COA matches every time — that\'s rare in this space.',
+    quote: 'The purity levels are consistently above what\'s advertised. COA matches every time. That\'s rare in this space.',
   },
   {
     id: 2,

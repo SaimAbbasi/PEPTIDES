@@ -27,7 +27,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <SectionHeading
         title={title}
-        subtitle={`${filtered.length} products — all third-party lab tested with COA.`}
+        subtitle={`${filtered.length} products, all third-party lab tested with COA.`}
       />
       <div className="flex flex-col md:flex-row gap-10">
         <Suspense fallback={<div className="w-56 h-48 bg-surface rounded-xl animate-pulse" />}>
