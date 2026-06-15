@@ -21,7 +21,7 @@ export function CartItem({ item }: { item: CartItemType }) {
           <p className="text-text-muted text-sm mt-0.5">{item.product.purity}% purity</p>
           <p className="text-accent font-bold mt-1">${item.product.price.toFixed(2)}</p>
         </div>
-        {/* Remove button — top right on mobile */}
+        {/* Remove button - top right on mobile */}
         <button
           onClick={() => removeItem(item.product.id)}
           className="text-text-muted hover:text-red-400 transition-colors flex-shrink-0 sm:hidden"
@@ -54,7 +54,7 @@ export function CartItem({ item }: { item: CartItemType }) {
           <p className="text-text-primary font-bold">
             ${(item.product.price * item.quantity).toFixed(2)}
           </p>
-          {/* Remove button — desktop only */}
+          {/* Remove button - desktop only */}
           <button
             onClick={() => removeItem(item.product.id)}
             className="text-text-muted hover:text-red-400 transition-colors hidden sm:block"
