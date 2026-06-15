@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { useCart } from '@/lib/context/CartContext'
 import { Button } from '@/components/ui/Button'
 import { CheckCircle } from '@phosphor-icons/react'
@@ -324,7 +325,7 @@ export default function CheckoutPage() {
               <h2 className="text-xl font-bold text-text-primary mb-6">Review Order</h2>
               {items.map((item) => (
                 <div key={item.product.id} className="flex items-center gap-4 py-3 border-b border-border-subtle">
-                  <img src={item.product.image} alt={item.product.name} className="w-14 h-14 object-cover rounded-lg opacity-80" />
+                  <Image src={item.product.image} alt={item.product.name} width={56} height={56} className="object-cover rounded-lg opacity-80" />
                   <div className="flex-1">
                     <p className="text-text-primary text-sm font-medium">{item.product.name}</p>
                     <p className="text-text-muted text-xs">Qty: {item.quantity}</p>

@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import { getBlogPostBySlug, blogPosts } from '@/lib/data/blog-posts'
 import { Badge } from '@/components/ui/Badge'
 import { Clock, CalendarBlank } from '@phosphor-icons/react/ssr'
@@ -37,8 +38,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
 
       {/* Cover image */}
-      <div className="rounded-2xl overflow-hidden mb-12 aspect-video">
-        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover opacity-80" />
+      <div className="rounded-2xl overflow-hidden mb-12 aspect-video relative">
+        <Image src={post.coverImage} alt={post.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 768px" className="object-cover opacity-80" />
       </div>
 
       {/* Body */}
