@@ -18,6 +18,7 @@ export interface Product {
   tags: string[]
   featured: boolean
   badge?: ProductBadge
+  weight: string
 }
 
 export interface Category {

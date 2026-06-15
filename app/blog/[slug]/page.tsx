@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
+import Link from 'next/link'
 import { getBlogPostBySlug, blogPosts } from '@/lib/data/blog-posts'
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -35,6 +36,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* Breadcrumb */}
+      <nav aria-label="Breadcrumb" className="mb-6">
+        <ol className="flex items-center gap-2 text-sm text-text-muted">
+          <li><Link href="/" className="hover:text-text-primary transition-colors">Home</Link></li>
+          <li className="text-border-subtle">/</li>
+          <li><Link href="/blog" className="hover:text-text-primary transition-colors">Blog</Link></li>
+          <li className="text-border-subtle">/</li>
+          <li className="text-text-secondary">{post.title}</li>
+        </ol>
+      </nav>
+
       {/* Header */}
       <div className="mb-10">
         <div className="flex items-center gap-4 mb-6">

@@ -17,6 +17,7 @@ export const products: Product[] = [
     tags: ['regenerative', 'popular', 'gut health'],
     featured: true,
     badge: 'bestseller',
+    weight: '5mg',
   },
   {
     id: 'prod-2',
@@ -34,6 +35,7 @@ export const products: Product[] = [
     tags: ['recovery', 'popular', 'tissue repair'],
     featured: true,
     badge: 'bestseller',
+    weight: '5mg',
   },
   {
     id: 'prod-3',
@@ -51,6 +53,7 @@ export const products: Product[] = [
     tags: ['GH secretagogue', 'performance', 'selective'],
     featured: true,
     badge: 'new',
+    weight: '2mg',
   },
   {
     id: 'prod-4',
@@ -67,6 +70,7 @@ export const products: Product[] = [
     coaUrl: '',
     tags: ['GHRH analogue', 'performance', 'long-acting'],
     featured: true,
+    weight: '2mg',
   },
   {
     id: 'prod-5',
@@ -84,6 +88,7 @@ export const products: Product[] = [
     tags: ['collagen', 'anti-aging', 'cosmetic', 'skin'],
     featured: true,
     badge: 'new',
+    weight: '10ml',
   },
   {
     id: 'prod-6',
@@ -101,6 +106,7 @@ export const products: Product[] = [
     tags: ['longevity', 'telomere', 'pineal', 'anti-aging'],
     featured: false,
     badge: undefined,
+    weight: '10mg',
   },
   {
     id: 'prod-7',
@@ -118,6 +124,7 @@ export const products: Product[] = [
     tags: ['nootropic', 'anxiolytic', 'cognitive', 'research'],
     featured: false,
     badge: 'new',
+    weight: '5mg',
   },
   {
     id: 'prod-8',
@@ -135,6 +142,7 @@ export const products: Product[] = [
     tags: ['bundle', 'BPC-157', 'TB-500', 'recovery', 'popular'],
     featured: true,
     badge: 'bestseller',
+    weight: '5mg + 5mg',
   },
 ]
 

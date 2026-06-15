@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import { getProductBySlug, products } from '@/lib/data/products'
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -44,6 +45,17 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
   return (
     <>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* Breadcrumb */}
+      <nav aria-label="Breadcrumb" className="mb-6">
+        <ol className="flex items-center gap-2 text-sm text-text-muted">
+          <li><Link href="/" className="hover:text-text-primary transition-colors">Home</Link></li>
+          <li className="text-border-subtle">/</li>
+          <li><Link href="/products" className="hover:text-text-primary transition-colors">Products</Link></li>
+          <li className="text-border-subtle">/</li>
+          <li className="text-text-secondary">{product.name}</li>
+        </ol>
+      </nav>
+
       {/* Product hero */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
         {/* Image */}
@@ -59,7 +71,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         <div>
           <div className="flex items-center gap-3 mb-4">
             <Badge category={product.category} />
-            <span className="text-text-muted text-sm">{product.purity}% Purity (HPLC)</span>
+            <span className="text-text-muted text-sm">{product.weight} · {product.purity}% purity</span>
           </div>
 
           <h1 className="text-4xl font-black text-text-primary mb-2">{product.name}</h1>
@@ -113,6 +125,29 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
       )}
     </div>
     <StickyAddToCartWrapper product={product} />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: product.name,
+          description: product.shortDescription,
+          image: product.image,
+          sku: product.slug,
+          brand: { '@type': 'Brand', name: 'PEPTICORE' },
+          offers: {
+            '@type': 'Offer',
+            price: product.price.toFixed(2),
+            priceCurrency: 'USD',
+            availability: product.inStock
+              ? 'https://schema.org/InStock'
+              : 'https://schema.org/OutOfStock',
+            url: `https://pepticore.com/products/${product.slug}`,
+          },
+        }),
+      }}
+    />
     </>
   )
 }
