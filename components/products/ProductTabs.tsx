@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Product } from '@/lib/types'
-import { ArrowSquareOut } from '@phosphor-icons/react'
+import { Envelope } from '@phosphor-icons/react'
 
 interface ProductTabsProps {
   product: Product
@@ -54,16 +54,14 @@ export function ProductTabs({ product }: ProductTabsProps) {
         {activeTab === 'coa' && (
           <div>
             <p className="text-text-secondary mb-6">
-              Every PEPTICORE product is independently tested by a third-party laboratory. Download the Certificate of Analysis for this batch below.
+              Every PEPTICORE product is independently tested by a third-party laboratory. Request the Certificate of Analysis for this product by emailing our team.
             </p>
             <a
-              href={product.coaUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:coa@pepticore.com?subject=COA Request: ${product.name}&body=Please send me the Certificate of Analysis for ${product.name} (${product.purity}% purity, batch on file).`}
               className="inline-flex items-center gap-2 bg-accent/10 hover:bg-accent/20 text-accent border border-accent/20 rounded-lg px-6 py-3 text-sm font-medium transition-colors"
             >
-              <ArrowSquareOut size={16} />
-              Download COA (PDF)
+              <Envelope size={16} />
+              Request COA
             </a>
           </div>
         )}

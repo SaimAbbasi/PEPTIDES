@@ -14,7 +14,7 @@ export interface Product {
   shortDescription: string
   description: string
   researchNotes: string
-  coaUrl: string          // Certificate of Analysis PDF URL
+  coaUrl?: string         // Certificate of Analysis PDF URL (optional)
   tags: string[]
   featured: boolean
   badge?: ProductBadge
