@@ -66,13 +66,20 @@ function StatCounter({ target, suffix, prefix = '', label }: { target: number; s
 export function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Animated gradient background */}
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1920&q=80"
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        {/* Hero: mixkit scientist mixing liquids in lab (ID 4719) */}
+        <source src="https://assets.mixkit.co/videos/4719/4719-720.mp4" type="video/mp4" />
+      </video>
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1920&q=80')` }}
-      />
-      <div
-        className="absolute inset-0 opacity-60"
+        className="absolute inset-0 opacity-75"
         style={{
           background: 'linear-gradient(135deg, #0A0B0D 0%, #0d1520 25%, #0A0B0D 50%, #0d1a18 75%, #0A0B0D 100%)',
           backgroundSize: '400% 400%',
