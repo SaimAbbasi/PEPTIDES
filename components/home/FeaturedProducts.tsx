@@ -17,7 +17,7 @@ export function FeaturedProducts() {
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {featured.map((product, i) => (
-          <AnimateIn key={product.id} delay={i * 0.1}>
+          <AnimateIn key={product.id} delay={i * 0.1} className="h-full">
             <ProductCard product={product} />
           </AnimateIn>
         ))}

@@ -21,7 +21,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
   const { openDrawer } = useCartDrawer()
 
   return (
-    <div className={cn('bg-surface border border-border-subtle rounded-xl overflow-hidden group hover:border-accent/30 transition-all duration-300 flex flex-col', className)}>
+    <div className={cn('bg-surface border border-border-subtle rounded-xl overflow-hidden group hover:border-accent/30 transition-all duration-300 flex flex-col h-full', className)}>
       {/* Image */}
       <div className="relative">
         <Link href={`/products/${product.slug}`} className="block overflow-hidden h-52">

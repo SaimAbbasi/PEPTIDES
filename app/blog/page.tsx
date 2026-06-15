@@ -23,7 +23,7 @@ export default function BlogPage() {
               <img
                 src={post.coverImage}
                 alt={post.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-70"
+                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-80 group-hover:opacity-100"
               />
             </div>
             <div className="p-6">
